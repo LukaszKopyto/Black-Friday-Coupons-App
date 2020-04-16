@@ -1,17 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './App'
+import { createGlobalStyle } from 'styled-components'
+import GlobalFonts from './fonts/fonts'
+
+export const GlobalStyle = createGlobalStyle`
+  body {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Open Sans';
+  }
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+`
 
 ReactDOM.render(
   <React.StrictMode>
+    <GlobalStyle />
+    <GlobalFonts />
     <App />
   </React.StrictMode>,
   document.getElementById('root')
-);
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+)
