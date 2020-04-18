@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import CountdownWrapper from './CountdownWrapper'
+import CountdownItem from './CountdownItem'
+import CountdownTitle from './CountdownTitle'
 
 const CountdownTimer = () => {
   const time = `${new Date().getFullYear()}-11-29`
@@ -32,17 +35,20 @@ const CountdownTimer = () => {
     }
 
     timerComponents.push(
-      <div key={interval}>
+      <CountdownItem key={interval}>
         <span>{timeLeft[interval]}</span>
         <span>{interval}</span>
-      </div>
+      </CountdownItem>
     )
   })
 
   return (
-    <div>
-      {timerComponents.length ? timerComponents : <span>Time's up!</span>}
-    </div>
+    <>
+      <CountdownTitle>29 listopada, czyli już za:</CountdownTitle>
+      <CountdownWrapper>
+        {timerComponents.length ? timerComponents : <span>Time's up!</span>}
+      </CountdownWrapper>
+    </>
   )
 }
 
