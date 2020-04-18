@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import CountdownWrapper from './CountdownWrapper'
 import CountdownItem from './CountdownItem'
 import CountdownTitle from './CountdownTitle'
+import TitleWrapper from '../title/TitleWrapper'
 
 const CountdownTimer = () => {
   const time = `${new Date().getFullYear()}-11-29`
@@ -11,10 +12,10 @@ const CountdownTimer = () => {
     let timeLeft = {}
     if (difference > 0) {
       timeLeft = {
-        Dni: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        Godzin: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        Minut: Math.floor((difference / 1000 / 60) % 60),
-        Sekund: Math.floor((difference / 1000) % 60),
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60),
       }
       return timeLeft
     }
@@ -27,26 +28,30 @@ const CountdownTimer = () => {
     }, 1000)
   })
 
-  const timerComponents = []
-
-  Object.keys(timeLeft).forEach((interval) => {
-    if (!timeLeft[interval]) {
-      return
-    }
-
-    timerComponents.push(
-      <CountdownItem key={interval}>
-        <span>{timeLeft[interval]}</span>
-        <span>{interval}</span>
-      </CountdownItem>
-    )
-  })
+  if (!timeLeft) {
+    return <TitleWrapper h2>Najnowsze Promocje</TitleWrapper>
+  }
 
   return (
     <>
       <CountdownTitle>29 listopada, czyli już za:</CountdownTitle>
       <CountdownWrapper>
-        {timerComponents.length ? timerComponents : <span>Time's up!</span>}
+        <CountdownItem>
+          <span>{timeLeft.days}</span>
+          <span>Dni</span>
+        </CountdownItem>
+        <CountdownItem>
+          <span>{timeLeft.hours}</span>
+          <span>Godzin</span>
+        </CountdownItem>
+        <CountdownItem>
+          <span>{timeLeft.minutes}</span>
+          <span>Minut</span>
+        </CountdownItem>
+        <CountdownItem>
+          <span>{timeLeft.seconds}</span>
+          <span>Sekund</span>
+        </CountdownItem>
       </CountdownWrapper>
     </>
   )

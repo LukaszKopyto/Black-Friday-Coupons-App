@@ -13,3 +13,4 @@ export const TitleWrapper = styled.h1`
     display: block;
   }
 `
+export default TitleWrapper
