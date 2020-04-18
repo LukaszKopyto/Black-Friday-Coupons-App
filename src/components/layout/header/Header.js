@@ -1,7 +1,7 @@
 import React from 'react'
 import { colors } from '../../../utils/colors'
 import Logo from '../Logo/Logo'
-import Button from '../button/Button'
+import Button from '../Button'
 import Title from '../title/Title'
 
 const HeaderImg = () => {
