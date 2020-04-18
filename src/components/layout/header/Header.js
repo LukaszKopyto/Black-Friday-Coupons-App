@@ -3,6 +3,7 @@ import { colors } from '../../../utils/colors'
 import Logo from '../Logo/Logo'
 import Button from '../Button'
 import Title from '../title/Title'
+import CountdownTimer from '../Countdown'
 
 const HeaderImg = () => {
   const style = {
@@ -19,6 +20,7 @@ const HeaderImg = () => {
       <Logo />
       <Button />
       <Title />
+      <CountdownTimer />
     </header>
   )
 }
