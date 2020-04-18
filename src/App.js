@@ -9,24 +9,49 @@ class App extends Component {
     form.append('_username', process.env.REACT_APP_USERNAME)
     form.append('_password', process.env.REACT_APP_PASSWORD)
 
-    fetch(`${API_URL}/login_check`, {
-      method: 'POST',
-      body: form,
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        let token = res.token
-        const header = {
-          headers: {
-            Authorization: `Bearer ${token}`,
-            'Content-Type': 'application/json',
-          },
+    const getRequestHeader = async (url) => {
+      try {
+        let response = await fetch(`${url}/login_check`, {
+          method: 'POST',
+          body: form,
+        })
+        if (await response.ok) {
+          let data = await response.json()
+          let token = await data.token
+          let requestHeader = {
+            headers: {
+              Authorization: `Bearer ${token}`,
+              'Content-Type': 'application/json',
+            },
+          }
+          return requestHeader
+        } else {
+          throw new Error('Błąd sieci!')
         }
-        return fetch(`${API_URL}/shops/2253/vouchers`, header)
-      })
-      .then((res) => res.json())
-      .then((res) => console.log(res))
-      .catch((err) => console.log('Błąd: ', err))
+      } catch (error) {
+        console.error('Błąd: ', error)
+      }
+    }
+
+    const getShops = async () => {
+      const headers = await getRequestHeader(API_URL)
+      const response = await fetch(`${API_URL}/shops`, headers)
+      const data = await response.json()
+      console.log('getShops: ', data)
+    }
+
+    const getShopVouchers = async (shopId) => {
+      const headers = await getRequestHeader(API_URL)
+      const response = await fetch(
+        `${API_URL}/shops/${shopId}/vouchers`,
+        headers
+      )
+      const data = await response.json()
+      console.log('getShopVouchers: ', data)
+    }
+
+    getShops()
+    getShopVouchers(2253)
   }
 
   render() {

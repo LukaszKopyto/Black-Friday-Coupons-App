@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 import { createGlobalStyle } from 'styled-components'
-import GlobalFonts from './fonts/fonts'
+import GlobalFonts from './utils/fonts/fonts'
 
 export const GlobalStyle = createGlobalStyle`
   body {
