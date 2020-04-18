@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import logo from './logo.svg'
-import { colors } from './utils/colors'
+import Header from './components/layout/header/Header'
 
 const API_URL = 'https://api.alerabat.com'
 
@@ -31,21 +30,7 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <div
-        style={{
-          background: colors.headerColor,
-          widht: '100vw',
-          margin: 0,
-          padding: 0,
-        }}
-      >
-        <header>
-          <img src={logo} alt='logo' />
-          <p>Hello</p>
-        </header>
-      </div>
-    )
+    return <Header />
   }
 }
 
