@@ -4,12 +4,13 @@ import Title from '../Title'
 import HeaderWrapper from './HeaderWrapper'
 import Button from '../Button'
 import Slider from '../Slider'
+import Coupon from '../Coupon'
 
 const Header = () => {
   return (
     <HeaderWrapper>
       <Logo />
-      <Button />
+      <Button ghostBtn>wróc do Alerabat.com</Button>
       <Title>
         <span>Black</span> Friday 2020
       </Title>
@@ -17,6 +18,8 @@ const Header = () => {
         Najnowsze promocje
       </Title>
       <Slider />
+      <Coupon />
+      <Coupon />
     </HeaderWrapper>
   )
 }

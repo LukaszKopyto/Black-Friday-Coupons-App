@@ -4,8 +4,9 @@ const SliderWrapper = styled.div`
   width: 100vw;
   display: flex;
   flex-wrap: nowrap;
+  flex: 0 0 auto;
   overflow-x: auto;
-  margin-top: 50px;
+  margin: 50px 0 30px;
   padding-left: 20px;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
