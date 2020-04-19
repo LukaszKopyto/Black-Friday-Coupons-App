@@ -1,15 +1,29 @@
 import { createGlobalStyle } from 'styled-components'
-
-import OpenSansExtraBold from './openSans800.woff2'
-import OpenSansBold from './openSans600.woff2'
-import OpenSansRegular from './openSansRegular.woff2'
+import openSansLight from './open-sans-v17-latin-300.woff'
+import openSansBold from './open-sans-v17-latin-600.woff'
+import openSansExBold from './open-sans-v17-latin-800.woff'
 
 export default createGlobalStyle`
-    @font-face {
-        font-family: 'OpenSans';
-        src: local('Open Sans'),
-        url(${OpenSansRegular}) format('woff2'),
-        url(${OpenSansBold}) format('woff2'),
-        url(${OpenSansExtraBold}) format('woff2');
-    }
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'),
+       url(${openSansLight}) format('woff'); /* Modern Browsers */
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'),
+       url(${openSansBold}) format('woff'); /* Modern Browsers */
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Open Sans ExtraBold'), local('OpenSans-ExtraBold'),
+       url(${openSansExBold}) format('woff'); /* Modern Browsers */
+}
+
 `
