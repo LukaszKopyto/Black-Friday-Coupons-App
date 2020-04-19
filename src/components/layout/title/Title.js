@@ -1,11 +1,11 @@
 import React from 'react'
-import { TitleWrapper } from './TitleWrapper'
+import TitleWrapper from './TitleWrapper'
 
-const Title = () => {
+const Title = (props) => {
   return (
     <>
-      <TitleWrapper>
-        <span>Black</span> Friday 2020
+      <TitleWrapper as={props.as} h2={props.h2}>
+        {props.children}
       </TitleWrapper>
     </>
   )
