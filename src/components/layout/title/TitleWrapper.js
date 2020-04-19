@@ -1,8 +1,7 @@
 import styled from 'styled-components'
-import { colors } from '../../../utils/colors'
 
 const TitleWrapper = styled.h1`
-  color: ${colors.bgColor};
+  color: ${({ theme }) => theme.colors.bgColor};
   text-transform: ${(props) => (props.h2 ? 'none' : 'uppercase')};
   text-align: center;
   font-size: ${(props) => (props.h2 ? '18px' : '36px')};

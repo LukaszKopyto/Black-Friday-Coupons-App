@@ -1,8 +1,7 @@
 import styled from 'styled-components'
-import { colors } from '../../../utils/colors'
 
 const CountdownTitle = styled.span`
-  color: ${colors.bgColor};
+  color: ${({ theme }) => theme.colors.bgColor};
   text-transform: uppercase;
   font-size: 1rem;
   font-weight: 300;

@@ -1,9 +1,8 @@
 import styled from 'styled-components'
-import { colors } from '../../../utils/colors'
 
 export const ButtonWrapper = styled.div`
   display: inline;
-  color: ${colors.bgColor};
+  color: ${({ theme }) => theme.colors.bgColor};
   font-size: 14px;
   line-height: 20px;
   font-weight: 300;

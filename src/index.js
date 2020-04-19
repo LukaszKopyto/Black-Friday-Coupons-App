@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import GlobalFonts from './utils/fonts/fonts'
+import { theme } from './utils/theme'
 
 export const GlobalStyle = createGlobalStyle`
   body {
@@ -17,9 +18,13 @@ export const GlobalStyle = createGlobalStyle`
 
 ReactDOM.render(
   <React.StrictMode>
-    <GlobalStyle />
-    <GlobalFonts />
-    <App />
+    <ThemeProvider theme={theme}>
+      <>
+        <GlobalStyle />
+        <GlobalFonts />
+        <App />
+      </>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 )
