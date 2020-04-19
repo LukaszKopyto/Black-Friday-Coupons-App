@@ -7,6 +7,7 @@ const SliderWrapper = styled.div`
   overflow-x: auto;
   margin-top: 50px;
   padding-left: 20px;
+  scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
   &::-webkit-scrollbar {
     display: none;

@@ -6,12 +6,14 @@ const SliderItem = styled.div`
   align-items: center;
   flex: 0 0 auto;
   margin-right: 10px;
-  background: white;
+  background: ${(props) => (props.bg ? props.bg : 'white')};
   border-radius: 6px;
   width: 100px;
   height: 46px;
+  cursor: pointer;
   & img {
-    height: 32px;
+    max-height: 32px;
+    max-width: 70px;
   }
 `
 export default SliderItem

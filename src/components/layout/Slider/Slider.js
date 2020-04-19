@@ -1,26 +1,18 @@
 import React from 'react'
-import uberEats from '../../../images/uberEats.png'
 import SliderWrapper from './SliderWrapper'
 import SliderItem from './SliderItem'
+import { promotedStores } from '../../../utils/promotedStores'
 
 const Slider = () => {
   return (
     <SliderWrapper>
-      <SliderItem>
-        <img src={uberEats} alt='test' />
-      </SliderItem>
-      <SliderItem>
-        <img src={uberEats} alt='test' />
-      </SliderItem>
-      <SliderItem>
-        <img src={uberEats} alt='test' />
-      </SliderItem>
-      <SliderItem>
-        <img src={uberEats} alt='test' />
-      </SliderItem>
-      <SliderItem>
-        <img src={uberEats} alt='test' />
-      </SliderItem>
+      {promotedStores.map((shop) => (
+        <a href={shop.link}>
+          <SliderItem bg={shop.bgColor} key={shop.alt}>
+            <img src={shop.image} alt={shop.alt} />
+          </SliderItem>
+        </a>
+      ))}
     </SliderWrapper>
   )
 }
