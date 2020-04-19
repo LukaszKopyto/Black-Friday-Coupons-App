@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Header from './components/layout/header/Header'
+import Header from './components/layout/Header'
 
 const API_URL = 'https://api.alerabat.com'
 

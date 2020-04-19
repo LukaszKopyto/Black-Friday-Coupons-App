@@ -1,26 +1,17 @@
 import React from 'react'
-import { colors } from '../../../utils/colors'
 import Logo from '../Logo/Logo'
 import Title from '../title/Title'
 import CountdownTimer from '../Countdown'
+import HeaderWrapper from './HeaderWrapper'
 
-const HeaderImg = () => {
-  const style = {
-    width: '100vw',
-    height: '880px',
-    background: colors.headerColor,
-    position: 'absolute',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  }
+const Header = () => {
   return (
-    <header style={style}>
+    <HeaderWrapper>
       <Logo />
       <Title />
       <CountdownTimer />
-    </header>
+    </HeaderWrapper>
   )
 }
 
-export default HeaderImg
+export default Header
