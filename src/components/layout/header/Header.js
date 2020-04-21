@@ -3,8 +3,6 @@ import Logo from '../Logo'
 import Title from '../Title'
 import HeaderWrapper from './HeaderWrapper'
 import Button from '../Button'
-import Slider from '../Slider'
-import Coupon from '../Coupon'
 
 const Header = () => {
   return (
@@ -17,9 +15,6 @@ const Header = () => {
       <Title as='h2' h2>
         Najnowsze promocje
       </Title>
-      <Slider />
-      <Coupon />
-      <Coupon />
     </HeaderWrapper>
   )
 }

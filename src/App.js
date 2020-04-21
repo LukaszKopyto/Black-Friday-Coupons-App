@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Header from './components/layout/Header'
+import Main from './components/layout/Main'
 
 const API_URL = 'https://api.alerabat.com'
 
@@ -55,7 +56,12 @@ class App extends Component {
   }
 
   render() {
-    return <Header />
+    return (
+      <>
+        <Header />
+        <Main />
+      </>
+    )
   }
 }
 
