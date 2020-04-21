@@ -7,11 +7,13 @@ const Slider = () => {
   return (
     <SliderWrapper>
       {promotedStores.map((shop, id) => (
-        <a href={shop.link} key={id}>
-          <SliderItem bg={shop.bgColor}>
-            <img src={shop.image} alt={shop.alt} />
-          </SliderItem>
-        </a>
+        <li key={id}>
+          <a href={shop.link}>
+            <SliderItem bg={shop.bgColor}>
+              <img src={shop.image} alt={shop.alt} />
+            </SliderItem>
+          </a>
+        </li>
       ))}
     </SliderWrapper>
   )
