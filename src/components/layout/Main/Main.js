@@ -3,6 +3,7 @@ import Slider from '../Slider'
 import Coupon from '../Coupon'
 import { MainWrapper } from './MainWrapper'
 import Button from '../Button'
+import SectionInfo from '../SectionInfo'
 
 const Main = () => {
   return (
@@ -13,6 +14,7 @@ const Main = () => {
       <Button ghostBtn textColor margin={40}>
         Pokaż więcej kuponów
       </Button>
+      <SectionInfo />
     </MainWrapper>
   )
 }

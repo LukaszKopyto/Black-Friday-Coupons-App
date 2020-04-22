@@ -8,7 +8,8 @@ export const ButtonWrapper = styled.button`
   line-height: 20px;
   font-weight: 300;
   padding: 9px 17px 11px;
-  border: ${({ ghostBtn }) => (ghostBtn ? '1px solid #979797' : 0)};
+  border: ${({ ghostBtn, theme }) =>
+    ghostBtn ? `1px solid ${theme.colors.border}` : 0};
   background: ${({ theme, ghostBtn }) =>
     ghostBtn
       ? 'transparent'
