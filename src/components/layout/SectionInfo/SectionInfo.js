@@ -3,6 +3,7 @@ import { Hamburger } from './Hamburger'
 import { SectionWrapper } from './SectionWrapper'
 import { FirstMenu } from './FirstMenu'
 import { SecondMenu } from './SecondMenu'
+import Article from '../Article'
 
 const SectionInfo = () => {
   return (
@@ -17,6 +18,7 @@ const SectionInfo = () => {
           <li>Black Friday w innych krajach</li>
         </SecondMenu>
       </nav>
+      <Article />
     </SectionWrapper>
   )
 }
