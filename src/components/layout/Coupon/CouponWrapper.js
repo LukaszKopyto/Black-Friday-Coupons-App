@@ -6,7 +6,7 @@ export const CouponWrapper = styled.section`
   border-radius: 6px;
   box-shadow: 0 5px 8px 0 rgba(82, 73, 98, 0.2);
   background-color: ${({ theme }) => theme.colors.couponBg};
-  margin: 10px auto;
+  margin: 10px 10px;
   padding: 20px;
   display: flex;
   flex-direction: column;

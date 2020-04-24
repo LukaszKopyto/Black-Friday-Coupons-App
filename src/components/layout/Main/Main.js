@@ -4,13 +4,18 @@ import Coupon from '../Coupon'
 import { MainWrapper } from './MainWrapper'
 import Button from '../Button'
 import SectionInfo from '../SectionInfo'
+import { CouponContainer } from '../Coupon/CouponContainer'
 
 const Main = () => {
   return (
     <MainWrapper>
       <Slider />
-      <Coupon />
-      <Coupon />
+      <CouponContainer>
+        <Coupon />
+        <Coupon />
+        <Coupon />
+        <Coupon />
+      </CouponContainer>
       <Button ghostBtn textColor margin={40}>
         Pokaż więcej kuponów
       </Button>
