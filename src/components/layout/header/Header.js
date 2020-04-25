@@ -10,7 +10,9 @@ const Header = () => {
     <HeaderWrapper>
       <LogoAndButtonWrapper>
         <Logo />
-        <Button ghostBtn>wróc do Alerabat.com</Button>
+        <Button ghostBtn margin={'25px 0 0'}>
+          wróc do Alerabat.com
+        </Button>
       </LogoAndButtonWrapper>
       <Title>
         <span>Black</span> Friday 2020

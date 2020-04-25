@@ -14,5 +14,9 @@ const SliderWrapper = styled.ul`
   &::-webkit-scrollbar {
     display: none;
   }
+
+  @media ${({ theme }) => theme.device.md} {
+    margin-top: 44px;
+  }
 `
 export default SliderWrapper

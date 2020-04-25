@@ -18,11 +18,10 @@ export const ButtonWrapper = styled.button`
   text-transform: ${({ ghostBtn }) => (ghostBtn ? null : 'uppercase')};
   text-align: center;
   margin-top: ${({ ghostBtn }) => (ghostBtn ? null : '19px')};
-  margin: ${({ margin }) => (margin ? '30px 40px' : null)};
   cursor: pointer;
   max-width: ${({ ghostBtn }) => (ghostBtn ? '180px' : null)};
 
   @media ${({ theme }) => theme.device.md} {
-    margin-top: 24px;
+    margin: ${({ margin }) => (margin ? margin : null)};
   }
 `

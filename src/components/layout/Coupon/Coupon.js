@@ -51,7 +51,7 @@ const Coupon = () => {
           <span>1532</span>
         </IconWrapper>
       </div>
-      <Button>Pokaż kod</Button>
+      <Button margin={'17px 0 0'}>Pokaż kod</Button>
     </CouponWrapper>
   )
 }

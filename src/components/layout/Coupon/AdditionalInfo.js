@@ -6,4 +6,10 @@ export const AdditionalInfo = styled.span`
   background: rgba(228, 45, 49, 0.1);
   padding: 0 9px;
   border-radius: 4px;
+  display: block;
+  margin-top: 8px;
+
+  @media ${({ theme }) => theme.device.md} {
+    margin-top: 4px;
+  }
 `
