@@ -10,5 +10,14 @@ const TitleWrapper = styled.h1`
   & span {
     display: block;
   }
+
+  @media ${({ theme }) => theme.device.md} {
+    font-size: ${(props) => (props.h2 ? '24px' : '56px')};
+    margin: ${(props) => (props.h2 ? '0' : '30px 0 2px 0')};
+    letter-spacing: 1px;
+    & span {
+      display: inline;
+    }
+  }
 `
 export default TitleWrapper

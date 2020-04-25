@@ -7,7 +7,7 @@ export const ButtonWrapper = styled.button`
   font-size: 14px;
   line-height: 20px;
   font-weight: 300;
-  padding: 9px 17px 11px;
+  padding: 9px 17px 9px;
   border: ${({ ghostBtn, theme }) =>
     ghostBtn ? `1px solid ${theme.colors.border}` : 0};
   background: ${({ theme, ghostBtn }) =>
@@ -20,4 +20,9 @@ export const ButtonWrapper = styled.button`
   margin-top: ${({ ghostBtn }) => (ghostBtn ? null : '19px')};
   margin: ${({ margin }) => (margin ? '30px 40px' : null)};
   cursor: pointer;
+  max-width: ${({ ghostBtn }) => (ghostBtn ? '180px' : null)};
+
+  @media ${({ theme }) => theme.device.md} {
+    margin-top: 24px;
+  }
 `
