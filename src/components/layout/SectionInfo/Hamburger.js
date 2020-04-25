@@ -29,4 +29,8 @@ export const Hamburger = styled.button`
       transform: rotate(-90deg) translateX(-3px);
     }
   }
+
+  @media ${({ theme }) => theme.device.md} {
+    margin-right: 35px;
+  }
 `

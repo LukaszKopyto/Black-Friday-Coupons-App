@@ -14,7 +14,7 @@ const SectionInfo = () => {
           <header>Black Friday - Podstawowe informacje</header>
         </FirstMenu>
         <SecondMenu>
-          <li>Podstawowe informacje</li>
+          <li className='active'>Podstawowe informacje</li>
           <li>Black Friday w innych krajach</li>
         </SecondMenu>
       </nav>

@@ -5,4 +5,9 @@ export const CouponContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: 40px;
+
+  @media ${({ theme }) => theme.device.md} {
+    margin-bottom: 32px;
+  }
 `

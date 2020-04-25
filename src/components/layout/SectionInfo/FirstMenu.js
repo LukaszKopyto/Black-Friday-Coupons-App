@@ -9,4 +9,9 @@ export const FirstMenu = styled.div`
   border-top: ${({ theme }) => `1px solid ${theme.colors.border}`};
   border-bottom: ${({ theme }) => `1px solid ${theme.colors.border}`};
   color: ${({ theme }) => theme.colors.textColor};
+
+  @media ${({ theme }) => theme.device.md} {
+    justify-content: flex-start;
+    font-size: 25px;
+  }
 `

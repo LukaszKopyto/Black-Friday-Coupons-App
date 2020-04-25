@@ -19,7 +19,7 @@ export const ButtonWrapper = styled.button`
   text-align: center;
   margin-top: ${({ ghostBtn }) => (ghostBtn ? null : '19px')};
   cursor: pointer;
-  max-width: ${({ ghostBtn }) => (ghostBtn ? '180px' : null)};
+  max-width: ${({ ghostBtn }) => (ghostBtn ? '190px' : null)};
 
   @media ${({ theme }) => theme.device.md} {
     margin: ${({ margin }) => (margin ? margin : null)};

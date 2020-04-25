@@ -6,5 +6,5 @@ export const colors = {
   headerColor: '#254d6b',
   textColor: '#524962',
   couponTitle: '#000000',
-  border: '#dfdfdf',
+  border: '#a9a3b0',
 }

@@ -16,7 +16,7 @@ const Main = () => {
         <Coupon />
         <Coupon />
       </CouponContainer>
-      <Button ghostBtn textColor margin={40}>
+      <Button ghostBtn textColor>
         Pokaż więcej kuponów
       </Button>
       <SectionInfo />
