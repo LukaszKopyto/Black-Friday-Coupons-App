@@ -1,5 +1,5 @@
-import React from 'react'
-import { Hamburger } from './Hamburger'
+import React, { useState } from 'react'
+import Hamburger from './Hamburger'
 import { SectionWrapper } from './SectionWrapper'
 import { FirstMenu } from './FirstMenu'
 import { SecondMenu } from './SecondMenu'
@@ -9,11 +9,13 @@ import SideMenu from './SideMenu'
 import { ArticleAndSideMenuWrapper } from './ArticleAndSideMenuWrapper'
 
 const SectionInfo = () => {
+  const [open, setOpen] = useState(false)
+
   return (
     <SectionWrapper>
       <NavWrapper>
         <FirstMenu>
-          <Hamburger></Hamburger>
+          <Hamburger open={open} setOpen={setOpen}></Hamburger>
           <header>Black Friday - Podstawowe informacje</header>
         </FirstMenu>
         <SecondMenu>
@@ -22,7 +24,7 @@ const SectionInfo = () => {
         </SecondMenu>
       </NavWrapper>
       <ArticleAndSideMenuWrapper>
-        <SideMenu />
+        <SideMenu open={open} />
         <Article />
       </ArticleAndSideMenuWrapper>
     </SectionWrapper>

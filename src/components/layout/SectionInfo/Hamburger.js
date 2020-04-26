@@ -1,40 +1,18 @@
-import styled from 'styled-components'
+import React from 'react'
+import { bool, func } from 'prop-types'
+import { HamburgerWrapper } from './HamburgerWrapper'
 
-export const Hamburger = styled.button`
-  width: 19px;
-  height: 12px;
-  border: 0;
-  border-top: ${({ theme }) => `2px solid ${theme.colors.textColor}`};
-  background: transparent;
-  position: relative;
-  transition: 0.3s transform linear;
-  &::before,
-  ::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    border-top: ${({ theme }) => `2px solid ${theme.colors.textColor}`};
-    transform: translateY(3px);
-  }
-  &::after {
-    transform: translateY(8px);
-    transition: 0.3s transform linear;
-  }
-  :hover {
-    transform: rotate(45deg) translateY(5px);
-    border: none;
-    &::after {
-      transform: rotate(-90deg) translateX(-3px);
-    }
+const Hamburger = ({ open, setOpen }) => {
+  const handleOnClick = () => {
+    setOpen(!open)
   }
 
-  @media ${({ theme }) => theme.device.md} {
-    margin-right: 35px;
-  }
+  return <HamburgerWrapper open={open} onClick={handleOnClick} />
+}
 
-  @media ${({ theme }) => theme.device.xl} {
-    display: none;
-  }
-`
+Hamburger.propTypes = {
+  open: bool.isRequired,
+  setOpen: func.isRequired,
+}
+
+export default Hamburger

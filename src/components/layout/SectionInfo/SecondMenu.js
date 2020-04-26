@@ -10,6 +10,7 @@ export const SecondMenu = styled.ul`
   justify-content: space-between;
   align-items: center;
   overflow-x: auto;
+  overflow-y: hidden;
   overflow-y: -moz-hidden-unscrollable;
   padding-left: 0px;
   position: relative;

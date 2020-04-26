@@ -1,9 +1,10 @@
 import React from 'react'
+import { bool } from 'prop-types'
 import { SideMenuWrapper } from './SideMenuWrapper'
 
-const SideMenu = () => {
+const SideMenu = ({ open }) => {
   return (
-    <SideMenuWrapper>
+    <SideMenuWrapper open={open}>
       <ul>
         <li>Black Friday: facts and numbers</li>
         <li>Black Friday: trends in the past years</li>
@@ -22,6 +23,10 @@ const SideMenu = () => {
       </ul>
     </SideMenuWrapper>
   )
+}
+
+SideMenu.propTypes = {
+  open: bool.isRequired,
 }
 
 export default SideMenu

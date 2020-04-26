@@ -3,9 +3,11 @@ import styled from 'styled-components'
 export const SideMenuWrapper = styled.nav`
   display: flex;
   width: 340px;
+  height: 100%;
   background: ${({ theme }) => theme.colors.sideMenuBg};
   position: absolute;
-  transform: translateX(-100%);
+  transform: ${({ open }) => (open ? 'translateX(0%)' : 'translateX(-100%)')};
+  transition: 0.3s transform cubic-bezier(0.6, -0.28, 0.74, 0.05);
   & ul {
     list-style: none;
     margin-top: 40px;
