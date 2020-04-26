@@ -14,4 +14,9 @@ export const FirstMenu = styled.div`
     justify-content: flex-start;
     font-size: 25px;
   }
+
+  @media ${({ theme }) => theme.device.xl} {
+    width: 50%;
+    padding: 0 50px;
+  }
 `

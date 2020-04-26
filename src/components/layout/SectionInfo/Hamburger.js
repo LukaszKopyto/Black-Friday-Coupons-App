@@ -33,4 +33,8 @@ export const Hamburger = styled.button`
   @media ${({ theme }) => theme.device.md} {
     margin-right: 35px;
   }
+
+  @media ${({ theme }) => theme.device.xl} {
+    display: none;
+  }
 `

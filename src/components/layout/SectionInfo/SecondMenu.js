@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const SecondMenu = styled.ul`
   height: 90px;
   list-style: none;
+  border-top: ${({ theme }) => `1px solid ${theme.colors.border}`};
   border-bottom: ${({ theme }) => `1px solid ${theme.colors.border}`};
   margin: 0;
   display: flex;
@@ -31,5 +32,18 @@ export const SecondMenu = styled.ul`
       text-align: center;
       font-size: 18px;
     }
+  }
+
+  @media ${({ theme }) => theme.device.xl} {
+    width: 50%;
+    overflow-x: unset;
+  }
+  & li {
+    line-height: 89px;
+    margin: 0;
+  }
+  & .active {
+    position: relative;
+    top: 1px;
   }
 `
