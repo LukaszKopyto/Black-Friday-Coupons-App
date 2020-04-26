@@ -10,16 +10,21 @@ export const SecondMenu = styled.ul`
   justify-content: space-between;
   align-items: center;
   overflow-x: auto;
+  overflow-y: -moz-hidden-unscrollable;
   padding-left: 0px;
+  position: relative;
+  top: -1px;
   & li {
     flex-shrink: 0;
     margin-right: 30px;
     font-weight: 600;
     color: ${({ theme }) => theme.colors.border};
-    height: 100%;
+    height: 90px;
     line-height: 81px;
     width: 278px;
     text-align: center;
+    position: relative;
+    top: 0px;
   }
   & .active {
     color: ${({ theme }) => theme.colors.textColor};
@@ -37,13 +42,12 @@ export const SecondMenu = styled.ul`
   @media ${({ theme }) => theme.device.xl} {
     width: 50%;
     overflow-x: unset;
+    top: 0px;
   }
   & li {
     line-height: 89px;
     margin: 0;
   }
   & .active {
-    position: relative;
-    top: 1px;
   }
 `
