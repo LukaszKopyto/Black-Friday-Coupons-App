@@ -12,4 +12,8 @@ export const LogoAndButtonWrapper = styled.div`
     justify-content: space-between;
     padding: 0 63px;
   }
+
+  @media ${({ theme }) => theme.device.xl} {
+    padding: 0 50px;
+  }
 `

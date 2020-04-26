@@ -15,6 +15,10 @@ const Main = () => {
         <Coupon />
         <Coupon />
         <Coupon />
+        <Coupon />
+        <Coupon />
+        <Coupon />
+        <Coupon />
       </CouponContainer>
       <Button ghostBtn textColor>
         Pokaż więcej kuponów
