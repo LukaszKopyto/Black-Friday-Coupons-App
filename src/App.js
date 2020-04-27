@@ -39,6 +39,7 @@ class App extends Component {
       const response = await fetch(`${API_URL}/shops`, headers)
       const data = await response.json()
       console.log('getShops: ', data)
+      return data
     }
 
     const getShopVouchers = async (shopId) => {
@@ -51,8 +52,16 @@ class App extends Component {
       console.log('getShopVouchers: ', data)
     }
 
+    const findShop = (shopName) => {
+      getShops().then((data) => {
+        const shop = data.find((shop) => shop.name === shopName)
+        console.log(shop)
+      })
+    }
+    findShop('Sephora')
+
     getShops()
-    getShopVouchers(2253)
+    getShopVouchers(2766)
   }
 
   render() {

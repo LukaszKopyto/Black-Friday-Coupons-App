@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import CountdownWrapper from './CountdownWrapper'
 import CountdownItem from './CountdownItem'
 import CountdownTitle from './CountdownTitle'
-import TitleWrapper from '../title/TitleWrapper'
+import Title from '../Title'
 
 const CountdownTimer = () => {
   const time = `${new Date().getFullYear()}-11-29`
@@ -29,7 +29,11 @@ const CountdownTimer = () => {
   })
 
   if (!timeLeft) {
-    return <TitleWrapper h2>Najnowsze Promocje</TitleWrapper>
+    return (
+      <Title as='h2' h2>
+        Najnowsze Promocje
+      </Title>
+    )
   }
 
   return (

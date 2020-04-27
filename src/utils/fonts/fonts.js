@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
-import openSansLight from './open-sans-v17-latin-300.woff'
-import openSansBold from './open-sans-v17-latin-600.woff'
-import openSansExBold from './open-sans-v17-latin-800.woff'
+import openSansLight from './open-sans-v17-latin-ext_latin-300.woff'
+import openSansBold from './open-sans-v17-latin-ext_latin-600.woff'
+import openSansExBold from './open-sans-v17-latin-ext_latin-800.woff'
 
 export default createGlobalStyle`
 @font-face {

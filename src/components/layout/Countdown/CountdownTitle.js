@@ -5,6 +5,6 @@ const CountdownTitle = styled.span`
   text-transform: uppercase;
   font-size: 1rem;
   font-weight: 300;
-  margin: 20px 0 13px;
+  margin: 24px 0 13px;
 `
 export default CountdownTitle
