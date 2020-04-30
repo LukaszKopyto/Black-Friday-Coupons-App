@@ -67,7 +67,7 @@ const Coupon = ({ voucher }) => {
             <span>
               <FinishDate />
             </span>
-            <span>2 tygodnie</span>
+            <span>{voucher.finishDate}</span>
           </IconWrapper>
           <IconWrapper>
             <span>
