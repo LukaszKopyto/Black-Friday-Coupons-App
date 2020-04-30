@@ -5,7 +5,6 @@ import { OfferTypeName } from './OfferTypeName'
 import { AdditionalInfo } from './AdditionalInfo'
 import Counter from './Counter'
 import { ReactComponent as FinishDate } from '../../../images/finishDate.svg'
-import { ReactComponent as AmountOfUse } from '../../../images/amountOfUse.svg'
 import { CouponTitle } from './CouponTitle'
 import { CouponDescription } from './CouponDescription'
 import { IconWrapper } from './IconWrapper'
@@ -13,12 +12,16 @@ import Button from '../Button'
 import PlaceholderCoupon from '../PlaceholderCoupon'
 import moment from 'moment'
 import 'moment/locale/pl'
+import CouponAmountOfUse from './CouponAmountOfUse'
 
 const Coupon = ({ voucher }) => {
   const [couponlike, setCouponlike] = useState(
     Math.floor(Math.random() * (200 - 10 + 1) + 10)
   )
   const [couponlikeColor, setCouponlikeColor] = useState(false)
+  const [amountOfUse, setAmountOfUse] = useState(
+    Math.floor(Math.random() * (300 - 24 + 1) + 24)
+  )
 
   const handleLikeClick = () => {
     if (couponlikeColor) {
@@ -27,6 +30,10 @@ const Coupon = ({ voucher }) => {
       setCouponlike((prevState) => prevState + 1)
       setCouponlikeColor((prevState) => !prevState)
     }
+  }
+
+  const handleAmountOfUse = () => {
+    setAmountOfUse((prevState) => prevState + 1)
   }
 
   if (voucher) {
@@ -71,14 +78,11 @@ const Coupon = ({ voucher }) => {
             </span>
             <span>{moment().to(voucher.finishDate)}</span>
           </IconWrapper>
-          <IconWrapper>
-            <span>
-              <AmountOfUse />
-            </span>
-            <span>1532</span>
-          </IconWrapper>
+          <CouponAmountOfUse amountOfUse={amountOfUse} />
         </div>
-        <Button margin={'17px 0 0'}>Pokaż kod</Button>
+        <Button margin={'17px 0 0'} click={handleAmountOfUse}>
+          Pokaż kod
+        </Button>
       </CouponWrapper>
     )
   }
