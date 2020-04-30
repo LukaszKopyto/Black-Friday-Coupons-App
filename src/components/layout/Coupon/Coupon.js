@@ -11,6 +11,8 @@ import { CouponDescription } from './CouponDescription'
 import { IconWrapper } from './IconWrapper'
 import Button from '../Button'
 import PlaceholderCoupon from '../PlaceholderCoupon'
+import moment from 'moment'
+import 'moment/locale/pl'
 
 const Coupon = ({ voucher }) => {
   const [couponlike, setCouponlike] = useState(
@@ -56,7 +58,7 @@ const Coupon = ({ voucher }) => {
             <Counter
               click={handleLikeClick}
               like={couponlike}
-              color={couponlikeColor}
+              heartColor={couponlikeColor}
             />
           </div>
         </div>
@@ -67,7 +69,7 @@ const Coupon = ({ voucher }) => {
             <span>
               <FinishDate />
             </span>
-            <span>{voucher.finishDate}</span>
+            <span>{moment().to(voucher.finishDate)}</span>
           </IconWrapper>
           <IconWrapper>
             <span>

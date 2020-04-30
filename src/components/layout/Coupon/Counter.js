@@ -2,9 +2,9 @@ import React from 'react'
 import { ReactComponent as Heart } from '../../../images/heart.svg'
 import { CounterWrapper } from './CounterWrapper'
 
-const Counter = ({ click, like, color }) => {
+const Counter = ({ click, like, heartColor }) => {
   return (
-    <CounterWrapper onClick={click} color={color}>
+    <CounterWrapper onClick={click} heartColor={heartColor}>
       <span>
         <Heart />
       </span>

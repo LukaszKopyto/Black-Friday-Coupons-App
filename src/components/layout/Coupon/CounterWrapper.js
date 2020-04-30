@@ -8,8 +8,8 @@ export const CounterWrapper = styled.div`
   padding: 10px;
   width: 78px;
   & span:nth-child(1) {
-    fill: ${({ theme, color }) =>
-      color ? theme.colors.second : 'rgba(0, 0, 0, 0.1)'};
+    fill: ${({ theme, heartColor }) =>
+      heartColor ? theme.colors.second : 'rgba(0, 0, 0, 0.1)'};
     position: relative;
     top: 3px;
     height: 14px;
