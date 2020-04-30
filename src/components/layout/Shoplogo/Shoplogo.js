@@ -1,11 +1,11 @@
 import React from 'react'
 import ShopLogoWrapper from './ShopLogoWrapper'
-import eObuwie from '../../../images/eObuwie.png'
+import sephora from '../../../images/Sephora.jpg'
 
 const Shoplogo = () => {
   return (
     <ShopLogoWrapper>
-      <img src={eObuwie} alt='eObuwie.pl' />
+      <img src={sephora} alt='Sephora' />
     </ShopLogoWrapper>
   )
 }
