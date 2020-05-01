@@ -5,11 +5,14 @@ import { MainWrapper } from './MainWrapper'
 import Button from '../Button'
 import SectionInfo from '../SectionInfo'
 import { CouponContainer } from '../Coupon/CouponContainer'
+import { promotedStores } from '../../../utils/promotedStores'
 
 const API_URL = 'https://api.alerabat.com'
 
 const Main = () => {
-  const [shop, setShop] = useState([])
+  const [shops, setShops] = useState([])
+
+  let promotedShopVouchers = []
 
   useEffect(() => {
     const form = new FormData()
@@ -53,10 +56,13 @@ const Main = () => {
       const response = await fetch(
         `${API_URL}/shops/${shopId}/vouchers`,
         headers
-      )
+      ).catch((error) => {
+        console.error(`Błąd ${shopId}:`, error)
+      })
       const data = await response.json()
-      setShop(data)
-      console.log('getShopVouchers: ', data)
+      promotedShopVouchers = [...data]
+      console.log(`shop ${data[0].shopName}`, data)
+      return promotedShopVouchers
     }
 
     const findShop = (shopName) => {
@@ -65,18 +71,18 @@ const Main = () => {
         console.log(shop)
       })
     }
-    findShop('Sephora')
 
-    getShops()
-    getShopVouchers(2766)
+    const getPromotedShops = async () => {
+      return Promise.all(promotedStores.map((shop) => getShopVouchers(shop.id)))
+    }
+    getPromotedShops().then((response) => setShops(response))
   }, [])
 
   return (
     <MainWrapper>
       <Slider />
       <CouponContainer>
-        <Coupon voucher={shop[0]} />
-        <Coupon voucher={shop[0]} />
+        <Coupon />
       </CouponContainer>
       <Button ghostBtn textColor>
         Pokaż więcej kuponów

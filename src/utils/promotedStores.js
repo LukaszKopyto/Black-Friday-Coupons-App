@@ -48,12 +48,12 @@ export const promotedStores = [
     alt: 'GROUPON',
   },
   {
-    id: 3096,
-    shopName: 'Apart',
+    id: 2524,
+    shopName: 'Media Expert',
     imageLink:
-      'https://alerabat.com/media/cache/voucher_logos_105/uploads/logos/5797721f27b15.webp',
+      'https://alerabat.com/media/cache/voucher_logos_105/uploads/logos/5e96c1b96a13c067216161.webp',
     bgColor: '#fff',
-    alt: 'Apart',
+    alt: 'Media Expert',
   },
   {
     id: 2985,
@@ -64,20 +64,20 @@ export const promotedStores = [
     alt: 'Zalando',
   },
   {
-    id: 6492,
-    shopName: 'Notron',
+    id: 2559,
+    shopName: 'Morele.net',
     imageLink:
-      'https://alerabat.com/media/cache/voucher_logos_105/uploads/logos/5de12ce45815f112654973.webp',
+      'https://alerabat.com/media/cache/voucher_logos_105/uploads/logos/57977216f0074.webp',
     bgColor: '#000000',
-    alt: 'Norton',
+    alt: 'Morele.net',
   },
   {
-    id: 4472,
-    shopName: 'Player+',
+    id: 2013,
+    shopName: 'AliExpress',
     imageLink:
-      'https://alerabat.com/media/cache/voucher_logos_105/uploads/logos/5e86f97746cec405201812.webp',
+      'https://alerabat.com/media/cache/voucher_logos_105/uploads/logos/5797720f94e98.webp',
     bgColor: '#fff',
-    alt: 'Player+',
+    alt: 'AliExpress',
   },
   {
     id: 2766,
