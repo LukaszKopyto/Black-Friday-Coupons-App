@@ -10,7 +10,7 @@ const Slider = () => {
         <li key={id}>
           <a href={shop.link}>
             <SliderItem bg={shop.bgColor}>
-              <img src={shop.image} alt={shop.alt} />
+              <img src={shop.imageLink} alt={shop.alt} />
             </SliderItem>
           </a>
         </li>

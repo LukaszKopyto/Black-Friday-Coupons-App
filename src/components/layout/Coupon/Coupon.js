@@ -37,7 +37,7 @@ const Coupon = ({ voucher }) => {
   }
 
   if (voucher) {
-    console.log(`voucher: `, voucher)
+    console.log('render komponentu Coupon')
 
     let offerTypeName = ''
     if (voucher.offerTypeName === 'discount code') {
@@ -76,7 +76,11 @@ const Coupon = ({ voucher }) => {
             <span>
               <FinishDate />
             </span>
-            <span>{moment().to(voucher.finishDate)}</span>
+            <span>
+              {voucher.finishDate
+                ? moment().to(voucher.finishDate)
+                : 'do odwołania'}
+            </span>
           </IconWrapper>
           <CouponAmountOfUse amountOfUse={amountOfUse} />
         </div>
