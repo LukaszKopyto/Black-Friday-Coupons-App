@@ -11,6 +11,7 @@ export const CouponWrapper = styled.section`
   padding: 20px;
   display: flex;
   flex-direction: column;
+  position: relative;
 
   @media ${({ theme }) => theme.device.md} {
     width: 300px;

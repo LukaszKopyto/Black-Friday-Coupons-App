@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { CouponWrapper } from './CouponWrapper'
+import moment from 'moment'
+import 'moment/locale/pl'
 import Shoplogo from '../Shoplogo'
 import { OfferTypeName } from './OfferTypeName'
 import { AdditionalInfo } from './AdditionalInfo'
@@ -8,11 +10,9 @@ import { ReactComponent as FinishDate } from '../../../images/finishDate.svg'
 import { CouponTitle } from './CouponTitle'
 import { CouponDescription } from './CouponDescription'
 import { IconWrapper } from './IconWrapper'
-import Button from '../Button'
 import PlaceholderCoupon from '../PlaceholderCoupon'
 import CouponAmountOfUse from './CouponAmountOfUse'
-import moment from 'moment'
-import 'moment/locale/pl'
+import Button from './Button'
 
 const Coupon = ({ voucher, img }) => {
   const [couponlike, setCouponlike] = useState(
