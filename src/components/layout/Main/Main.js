@@ -13,13 +13,13 @@ axios.defaults.baseURL = 'https://api.alerabat.com'
 
 const Main = () => {
   const [shops, setShops] = useState([])
+  const [voucherNum, setVoucherNum] = useState(2)
 
   const fetchData = () => {
     api
       .getAuthToken()
       .then((headers) => api.getShopsId(headers))
       .then(({ data: { data, headers } }) => {
-        console.log(data, headers)
         axios
           .all(data.map((link) => axios.get(link, { headers })))
           .then((res) => {
@@ -49,11 +49,17 @@ const Main = () => {
 
   useEffect(() => {
     fetchData()
+    if (window.matchMedia('max-width: 376px')) {
+      setVoucherNum(2)
+    } else {
+      setVoucherNum(4)
+    }
   }, [])
 
-  const CouponList = shops.map((shop) => (
-    <Coupon key={shop[0].id} voucher={shop[0]} />
-  ))
+  const CouponList = shops
+    .map((shop) => <Coupon key={shop[0].id} voucher={shop[0]} />)
+    .slice(0, voucherNum)
+  console.log(CouponList)
 
   return (
     <MainWrapper>

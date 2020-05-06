@@ -1,9 +1,20 @@
 import axios from 'axios'
 import { promotedStores } from './promotedStores'
 
+let userName
+let password
+
+if (process.env.NODE_ENV !== 'production') {
+  userName = process.env.REACT_APP_USERNAME
+  password = process.env.REACT_APP_PASSWORD
+} else {
+  userName = process.env.USERNAME
+  password = process.env.PASSWORD
+}
+
 const form = new FormData()
-form.append('_username', process.env.REACT_APP_USERNAME)
-form.append('_password', process.env.REACT_APP_PASSWORD)
+form.append('_username', userName)
+form.append('_password', password)
 
 const axiosInstance = axios.create({
   baseURL: 'https://api.alerabat.com',

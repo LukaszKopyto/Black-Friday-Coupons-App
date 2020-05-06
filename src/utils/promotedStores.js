@@ -17,23 +17,15 @@ export const promotedStores = [
   },
   {
     id: 2253,
-    shopName: 'eObuwie',
+    shopName: 'eobuwie',
     imageLink:
       'https://alerabat.com/media/cache/voucher_logos_105/uploads/logos/579772130419a.webp',
     bgColor: '#fff',
     alt: 'eObuwie',
   },
   {
-    id: 2393,
-    shopName: 'Notino',
-    imageLink:
-      'https://alerabat.com/media/cache/voucher_logos_105/uploads/logos/5cd90939b9d19641986229.webp',
-    bgColor: '#000000',
-    alt: 'Notino',
-  },
-  {
     id: 2002,
-    shopName: 'Adidas',
+    shopName: 'adidas',
     imageLink:
       'https://alerabat.com/media/cache/voucher_logos_105/uploads/logos/57eb664d1937f.webp',
     bgColor: '#fff',
