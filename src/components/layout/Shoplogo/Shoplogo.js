@@ -2,10 +2,10 @@ import React from 'react'
 import ShopLogoWrapper from './ShopLogoWrapper'
 import sephora from '../../../images/Sephora.jpg'
 
-const Shoplogo = () => {
+const Shoplogo = ({ img }) => {
   return (
     <ShopLogoWrapper>
-      <img src={sephora} alt='Sephora' />
+      <img src={img} alt='Sephora' />
     </ShopLogoWrapper>
   )
 }

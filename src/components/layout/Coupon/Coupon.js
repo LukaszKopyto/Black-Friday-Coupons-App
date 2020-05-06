@@ -10,11 +10,11 @@ import { CouponDescription } from './CouponDescription'
 import { IconWrapper } from './IconWrapper'
 import Button from '../Button'
 import PlaceholderCoupon from '../PlaceholderCoupon'
+import CouponAmountOfUse from './CouponAmountOfUse'
 import moment from 'moment'
 import 'moment/locale/pl'
-import CouponAmountOfUse from './CouponAmountOfUse'
 
-const Coupon = ({ voucher }) => {
+const Coupon = ({ voucher, img }) => {
   const [couponlike, setCouponlike] = useState(
     Math.floor(Math.random() * (200 - 10 + 1) + 10)
   )
@@ -55,7 +55,7 @@ const Coupon = ({ voucher }) => {
     return (
       <CouponWrapper>
         <div style={style}>
-          <Shoplogo />
+          <Shoplogo img={img} />
           <div>
             <OfferTypeName>{offerTypeName}</OfferTypeName>
             {voucher.additionalInfo && (
