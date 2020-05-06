@@ -52,7 +52,7 @@ export const promotedStores = [
     shopName: 'Media Expert',
     imageLink:
       'https://alerabat.com/media/cache/voucher_logos_105/uploads/logos/5e96c1b96a13c067216161.webp',
-    bgColor: '#fff',
+    bgColor: '#000',
     alt: 'Media Expert',
   },
   {
@@ -68,7 +68,7 @@ export const promotedStores = [
     shopName: 'Morele.net',
     imageLink:
       'https://alerabat.com/media/cache/voucher_logos_105/uploads/logos/57977216f0074.webp',
-    bgColor: '#000000',
+    bgColor: '#fff',
     alt: 'Morele.net',
   },
   {

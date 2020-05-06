@@ -55,7 +55,7 @@ const Coupon = ({ voucher, img }) => {
     return (
       <CouponWrapper>
         <div style={style}>
-          <Shoplogo img={img} />
+          <Shoplogo shopName={voucher.shopName} />
           <div>
             <OfferTypeName>{offerTypeName}</OfferTypeName>
             {voucher.additionalInfo && (
