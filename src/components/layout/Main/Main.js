@@ -7,7 +7,6 @@ import { MainWrapper } from './MainWrapper'
 import Button from '../Button'
 import SectionInfo from '../SectionInfo'
 import { CouponContainer } from '../Coupon/CouponContainer'
-import { promotedStores } from '../../../utils/promotedStores'
 import PlaceholderCoupon from '../PlaceholderCoupon'
 
 axios.defaults.baseURL = 'https://api.alerabat.com'
@@ -23,7 +22,6 @@ const Main = () => {
         console.log(data, headers)
         axios
           .all(data.map((link) => axios.get(link, { headers })))
-          // .then(axios.spread())
           .then((res) => {
             const shopVouchers = res.map((item) => item.data)
             setShops(shopVouchers)
@@ -62,7 +60,6 @@ const Main = () => {
       <Slider />
       <CouponContainer>
         {shops.length ? CouponList : <PlaceholderCoupon />}
-        <PlaceholderCoupon />
       </CouponContainer>
       <Button ghostBtn textColor>
         Pokaż więcej kuponów

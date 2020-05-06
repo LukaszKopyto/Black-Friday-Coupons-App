@@ -70,7 +70,11 @@ const Coupon = ({ voucher, img }) => {
           </div>
         </div>
         <CouponTitle>{voucher.title}</CouponTitle>
-        <CouponDescription>{voucher.description}</CouponDescription>
+        <CouponDescription>
+          {voucher.description.length > 80
+            ? voucher.description.substring(0, 80) + ' ...'
+            : voucher.description}
+        </CouponDescription>
         <div style={style}>
           <IconWrapper>
             <span>

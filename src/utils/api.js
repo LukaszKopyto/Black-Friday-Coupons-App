@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { stores } from './stores'
 import { promotedStores } from './promotedStores'
 
 const form = new FormData()
@@ -26,7 +25,6 @@ export default {
           const json = JSON.parse(data)
           data = Array.from(json)
             .filter(({ name }) => {
-              // return stores.includes(name)
               return promotedStores.map((shop) => shop.shopName).includes(name)
             })
             .map((shop) => `/shops/${shop.id}/vouchers`)
