@@ -16,6 +16,8 @@ const form = new FormData()
 form.append('_username', userName)
 form.append('_password', password)
 
+console.log(form)
+
 const axiosInstance = axios.create({
   baseURL: 'https://api.alerabat.com',
   timeout: 5000,

@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import api from '../../../utils/api'
+import PlaceholderCoupon from '../PlaceholderCoupon'
 import Slider from '../Slider'
 import Coupon from '../Coupon'
 import { MainWrapper } from './MainWrapper'
 import Button from '../Button'
 import SectionInfo from '../SectionInfo'
 import { CouponContainer } from '../Coupon/CouponContainer'
-import PlaceholderCoupon from '../PlaceholderCoupon'
 
 axios.defaults.baseURL = 'https://api.alerabat.com'
 
 const Main = () => {
+  const [width, setWidth] = useState(window.innerWidth)
   const [shops, setShops] = useState([])
-  const [voucherNum, setVoucherNum] = useState(2)
+  const [voucherToShow, setVoucherToShow] = useState(2)
+  const [showMoreButton, setShowMoreButton] = useState(true)
 
   const fetchData = () => {
     api
@@ -49,27 +51,53 @@ const Main = () => {
 
   useEffect(() => {
     fetchData()
-    if (window.matchMedia('max-width: 376px')) {
-      setVoucherNum(2)
-    } else {
-      setVoucherNum(4)
-    }
+    const handleWindowResize = () => setWidth(window.innerWidth)
+    window.addEventListener('resize', handleWindowResize)
+
+    checkWindowWidth(width, setVoucherToShow)
+
+    return () => window.removeEventListener('resize', handleWindowResize)
   }, [])
 
+  function checkWindowWidth(width, setVoucherToShow) {
+    if (width > 375 && width < 959) {
+      setVoucherToShow(4)
+    }
+    if (width > 960 && width < 1279) {
+      setVoucherToShow(6)
+    }
+    if (width > 1280) {
+      setVoucherToShow(8)
+    }
+  }
+
+  const showMoreVoucher = () => {
+    const numbersOfVoucher = voucherToShow * 2
+
+    if (numbersOfVoucher < shops.length) {
+      setVoucherToShow(numbersOfVoucher)
+    } else {
+      setVoucherToShow(numbersOfVoucher)
+      setShowMoreButton(!showMoreButton)
+    }
+  }
+
   const CouponList = shops
+    .slice(0, voucherToShow)
     .map((shop) => <Coupon key={shop[0].id} voucher={shop[0]} />)
-    .slice(0, voucherNum)
-  console.log(CouponList)
 
   return (
     <MainWrapper>
       <Slider />
       <CouponContainer>
-        {shops.length ? CouponList : <PlaceholderCoupon />}
+        {shops.length ? CouponList : <PlaceholderCoupon n={voucherToShow} />}
       </CouponContainer>
-      <Button ghostBtn textColor>
-        Pokaż więcej kuponów
-      </Button>
+      {showMoreButton ? (
+        <Button ghostBtn textColor click={showMoreVoucher}>
+          Pokaż więcej kuponów
+        </Button>
+      ) : null}
+
       <SectionInfo />
     </MainWrapper>
   )
