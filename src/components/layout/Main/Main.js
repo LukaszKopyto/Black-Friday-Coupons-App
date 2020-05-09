@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import api from '../../../utils/api'
+import api, { API_URL } from '../../../utils/api'
 import PlaceholderCoupon from '../PlaceholderCoupon'
 import Slider from '../Slider'
 import Coupon from '../Coupon'
@@ -9,7 +9,7 @@ import Button from '../Button'
 import SectionInfo from '../SectionInfo'
 import { CouponContainer } from '../Coupon/CouponContainer'
 
-axios.defaults.baseURL = 'https://api.alerabat.com'
+axios.defaults.baseURL = API_URL
 
 const Main = () => {
   const [width, setWidth] = useState(window.innerWidth)
@@ -74,7 +74,7 @@ const Main = () => {
   const showMoreVoucher = () => {
     const numbersOfVoucher = voucherToShow * 2
 
-    if (numbersOfVoucher < shops.length) {
+    if (numbersOfVoucher < CouponList.length) {
       setVoucherToShow(numbersOfVoucher)
     } else {
       setVoucherToShow(numbersOfVoucher)
@@ -82,15 +82,27 @@ const Main = () => {
     }
   }
 
-  const CouponList = shops
-    .slice(0, voucherToShow)
-    .map((shop) => <Coupon key={shop[0].id} voucher={shop[0]} />)
+  // const CouponList = shops
+  //   .slice(0, voucherToShow)
+  //   .map((shop) => <Coupon key={shop[0].id} voucher={shop[0]} />)
+
+  const CouponList = []
+
+  for (const i of shops) {
+    for (const j of i) {
+      CouponList.push(<Coupon key={j.id} voucher={j} />)
+    }
+  }
 
   return (
     <MainWrapper>
       <Slider />
       <CouponContainer>
-        {shops.length ? CouponList : <PlaceholderCoupon n={voucherToShow} />}
+        {shops.length ? (
+          CouponList.slice(0, voucherToShow)
+        ) : (
+          <PlaceholderCoupon n={voucherToShow} />
+        )}
       </CouponContainer>
       {showMoreButton ? (
         <Button ghostBtn textColor click={showMoreVoucher}>
