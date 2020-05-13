@@ -49,18 +49,14 @@ const Main = () => {
     }
   }
 
-  // const CouponList = shops
-  //   .slice(0, voucherToShow)
-  //   .map((shop) => <Coupon key={shop[0].id} voucher={shop[0]} />)
-
   const CouponList = []
-
-  for (const i of shops) {
-    for (const j of i) {
-      CouponList.push(<Coupon key={j.id} voucher={j} />)
+  if (shops) {
+    for (const i of shops) {
+      for (const j of i) {
+        CouponList.push(<Coupon key={j.id} voucher={j} />)
+      }
     }
   }
-
   return (
     <MainWrapper>
       <Slider />

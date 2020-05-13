@@ -88,9 +88,13 @@ const Coupon = ({ voucher, img }) => {
           </IconWrapper>
           <CouponAmountOfUse amountOfUse={amountOfUse} />
         </div>
-        <Button margin={'17px 0 0'} click={handleAmountOfUse}>
-          Pokaż kod
-        </Button>
+        <a href={voucher.directLink} target='_blank'>
+          <Button margin={'17px 0 0'} click={handleAmountOfUse}>
+            {voucher.offerTypeName === 'offer'
+              ? 'Przejdź do promocji'
+              : 'Pokaż kod'}
+          </Button>
+        </a>
       </CouponWrapper>
     )
   }

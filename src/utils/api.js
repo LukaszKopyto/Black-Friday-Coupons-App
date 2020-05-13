@@ -1,11 +1,7 @@
 import axios from 'axios'
 import { promotedStores } from './promotedStores'
 
-const form = new FormData()
-form.append('_username', process.env.REACT_APP_USERNAME)
-form.append('_password', process.env.REACT_APP_PASSWORD)
-
-export const API_URL = 'https://api.alerabat.com'
+const API_URL = 'https://api.alerabat.com'
 
 const axiosInstance = axios.create({
   baseURL: API_URL,
@@ -46,7 +42,8 @@ export const getVouchers = () => {
     },
     (error) => {
       if (error.response.status === 401) {
-        return getToken()
+        getToken()
+        return getVouchers()
       }
     }
   )
