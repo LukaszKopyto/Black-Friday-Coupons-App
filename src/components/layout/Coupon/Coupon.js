@@ -12,7 +12,7 @@ import { CouponDescription } from './CouponDescription'
 import { IconWrapper } from './IconWrapper'
 import PlaceholderCoupon from '../PlaceholderCoupon'
 import CouponAmountOfUse from './CouponAmountOfUse'
-import Button from './Button'
+import ShowVoucher from './ShowVoucher'
 
 const Coupon = ({ voucher, img }) => {
   const [couponlike, setCouponlike] = useState(
@@ -22,6 +22,7 @@ const Coupon = ({ voucher, img }) => {
   const [amountOfUse, setAmountOfUse] = useState(
     Math.floor(Math.random() * (300 - 24 + 1) + 24)
   )
+  const [showVoucher, setShowVoucher] = useState(false)
 
   const handleLikeClick = () => {
     if (couponlikeColor) {
@@ -34,6 +35,7 @@ const Coupon = ({ voucher, img }) => {
 
   const handleAmountOfUse = () => {
     setAmountOfUse((prevState) => prevState + 1)
+    setShowVoucher((prevState) => !prevState)
   }
 
   if (voucher) {
@@ -88,13 +90,11 @@ const Coupon = ({ voucher, img }) => {
           </IconWrapper>
           <CouponAmountOfUse amountOfUse={amountOfUse} />
         </div>
-        <a href={voucher.directLink} target='_blank'>
-          <Button margin={'17px 0 0'} click={handleAmountOfUse}>
-            {voucher.offerTypeName === 'offer'
-              ? 'Przejdź do promocji'
-              : 'Pokaż kod'}
-          </Button>
-        </a>
+        <ShowVoucher
+          voucher={voucher}
+          showVoucher={showVoucher}
+          handleAmountOfUse={handleAmountOfUse}
+        />
       </CouponWrapper>
     )
   }

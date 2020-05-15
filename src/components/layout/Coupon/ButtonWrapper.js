@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
 export const ButtonWrapper = styled.button`
-  display: inline;
+  display: inline-flex;
+  justify-content: center;
   color: ${({ theme }) => theme.colors.bgColor};
   font-size: 14px;
   line-height: 20px;
@@ -13,11 +14,8 @@ export const ButtonWrapper = styled.button`
   border-radius: 6px;
   text-transform: uppercase;
   text-align: center;
-  margin-top: 19px;
   cursor: pointer;
-  bottom: 20px;
-  position: absolute;
-  width: calc(100% - 40px);
+  width: 100%;
 
   @media ${({ theme }) => theme.device.md} {
     margin: ${({ margin }) => (margin ? margin : null)};

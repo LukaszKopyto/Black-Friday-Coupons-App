@@ -61,7 +61,7 @@ const Main = () => {
     <MainWrapper>
       <Slider />
       <CouponContainer>
-        {shops.length ? (
+        {shops && shops.length ? (
           CouponList.slice(0, voucherToShow)
         ) : (
           <PlaceholderCoupon n={voucherToShow} />
