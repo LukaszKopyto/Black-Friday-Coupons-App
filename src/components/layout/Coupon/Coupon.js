@@ -12,7 +12,7 @@ import { CouponDescription } from './CouponDescription'
 import { IconWrapper } from './IconWrapper'
 import PlaceholderCoupon from '../PlaceholderCoupon'
 import CouponAmountOfUse from './CouponAmountOfUse'
-import Button from './Button'
+import ShowVoucherCode from './ShowVoucherCode'
 
 const Coupon = ({ voucher, img }) => {
   const [couponlike, setCouponlike] = useState(
@@ -22,6 +22,8 @@ const Coupon = ({ voucher, img }) => {
   const [amountOfUse, setAmountOfUse] = useState(
     Math.floor(Math.random() * (300 - 24 + 1) + 24)
   )
+  const [showVoucher, setShowVoucher] = useState(false)
+  const [copied, setCopied] = useState(false)
 
   const handleLikeClick = () => {
     if (couponlikeColor) {
@@ -34,6 +36,11 @@ const Coupon = ({ voucher, img }) => {
 
   const handleAmountOfUse = () => {
     setAmountOfUse((prevState) => prevState + 1)
+    setShowVoucher((prevState) => !prevState)
+  }
+
+  const handleOnCopy = () => {
+    setCopied(true)
   }
 
   if (voucher) {
@@ -88,9 +95,16 @@ const Coupon = ({ voucher, img }) => {
           </IconWrapper>
           <CouponAmountOfUse amountOfUse={amountOfUse} />
         </div>
-        <Button margin={'17px 0 0'} click={handleAmountOfUse}>
-          Pokaż kod
-        </Button>
+        <ShowVoucherCode
+          voucher={voucher}
+          showVoucher={showVoucher}
+          handleAmountOfUse={handleAmountOfUse}
+          like={couponlike}
+          heartColor={couponlikeColor}
+          amountOfUse={amountOfUse}
+          copied={copied}
+          copy={handleOnCopy}
+        />
       </CouponWrapper>
     )
   }
