@@ -50,7 +50,6 @@ const Main = () => {
   }
 
   const CouponList = []
-  const DynamicCouponList = []
   if (shops) {
     for (const shop of shops) {
       for (const voucher of shop) {

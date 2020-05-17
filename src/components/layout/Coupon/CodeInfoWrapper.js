@@ -5,6 +5,9 @@ export const CodeInfoWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
-  height: 100%;
+  /* height: 100%; */
   justify-content: flex-end;
+  & a {
+    text-decoration: none;
+  }
 `

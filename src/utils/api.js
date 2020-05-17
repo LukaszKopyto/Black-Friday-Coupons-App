@@ -3,8 +3,6 @@ import { promotedStores } from './promotedStores'
 
 const API_URL = 'https://api.alerabat.com'
 
-console.log(form)
-
 const axiosInstance = axios.create({
   baseURL: API_URL,
   timeout: 5000,

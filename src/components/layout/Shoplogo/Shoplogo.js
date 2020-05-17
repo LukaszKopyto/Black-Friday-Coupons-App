@@ -16,6 +16,9 @@ const Shoplogo = ({ shopName }) => {
   return (
     <ShopLogoWrapper bg={bg}>
       <img src={imageLink} alt={shopName} />
+      {/* <picture>
+        <source srcset={imageLink} type='image/webp' />
+      </picture> */}
     </ShopLogoWrapper>
   )
 }

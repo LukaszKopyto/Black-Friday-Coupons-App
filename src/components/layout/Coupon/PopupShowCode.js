@@ -7,7 +7,7 @@ const PopupShowCode = ({ voucher, copy, mobile }) => {
   return (
     <ShowVoucherWrapper mobile={mobile}>
       <CopyToClipboard text={voucher.code.codeValue} onCopy={copy}>
-        <ShowCodeButton width={'38%'}>
+        <ShowCodeButton>
           {voucher.code !== null && voucher.code.codeValue}
         </ShowCodeButton>
       </CopyToClipboard>

@@ -68,7 +68,6 @@ const Coupon = ({ voucher, img }) => {
             {voucher.additionalInfo && (
               <AdditionalInfo>{voucher.additionalInfo}</AdditionalInfo>
             )}
-
             <Counter
               click={handleLikeClick}
               like={couponlike}
