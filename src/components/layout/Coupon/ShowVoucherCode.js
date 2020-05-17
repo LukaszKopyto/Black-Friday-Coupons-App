@@ -36,7 +36,7 @@ const ShowVoucherCode = ({
 
   const codeInfo = (
     <CodeInfoWrapper>
-      <ShowCodeButton>
+      <ShowCodeButton width={'90%'}>
         {voucher.code !== null && voucher.code.codeValue}
       </ShowCodeButton>
       <LinkWrapper>
