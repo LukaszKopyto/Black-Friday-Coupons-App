@@ -17,11 +17,8 @@ const getToken = () => {
       .post('/login_check', form)
       .then(async (response) => {
         resolve(response.data.token)
-        const token = response.data.token
-        const tokenLastRefresh = new Date().getTime()
-
-        localStorage.setItem('token', token)
-        localStorage.setItem('tokenLastRefresh', tokenLastRefresh)
+        // let token = response.data.token
+        // let tokenLastRefresh = new Date().getTime()
       })
       .catch((error) => {
         reject(error)
@@ -29,12 +26,9 @@ const getToken = () => {
   })
 }
 
-export const getVouchers = () => {
-  let token = localStorage.getItem('token')
+export const getVouchers = async () => {
+  let token = await getToken()
 
-  if (!token) {
-    getToken()
-  }
   axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${token}`
   axiosInstance.interceptors.response.use(
     (response) => {
@@ -42,7 +36,6 @@ export const getVouchers = () => {
     },
     (error) => {
       if (error.response.status === 401) {
-        getToken()
         return getVouchers()
       }
     }

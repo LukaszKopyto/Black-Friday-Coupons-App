@@ -14,7 +14,7 @@ export const ShowVoucherWrapper = styled.div`
   justify-content: space-around;
   & h4 {
     font-size: ${({ mobile }) => (mobile ? '.8rem' : '1.25rem')};
-    margin: ${({ mobile }) => (mobile ? '10px 0 0' : 'revert')};
+    margin: ${({ mobile }) => (mobile ? '10px 0 0' : '26px 0')};
     & a {
       color: ${({ theme }) => theme.colors.textColor};
     }
