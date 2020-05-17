@@ -50,10 +50,16 @@ const Main = () => {
   }
 
   const CouponList = []
+  const DynamicCouponList = []
   if (shops) {
-    for (const i of shops) {
-      for (const j of i) {
-        CouponList.push(<Coupon key={j.id} voucher={j} />)
+    for (const shop of shops) {
+      for (const voucher of shop) {
+        //only static typeName coupon code
+        if (!voucher.code) {
+          CouponList.push(<Coupon key={voucher.id} voucher={voucher} />)
+        } else if (voucher.code && voucher.code.typeName !== 'dynamic') {
+          CouponList.push(<Coupon key={voucher.id} voucher={voucher} />)
+        }
       }
     }
   }
