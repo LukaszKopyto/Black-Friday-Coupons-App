@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import SliderWrapper from './SliderWrapper'
 import SliderItem from './SliderItem'
 import { promotedStores } from '../../../utils/promotedStores'
@@ -8,11 +9,11 @@ const Slider = () => {
     <SliderWrapper>
       {promotedStores.map((shop, id) => (
         <li key={id}>
-          <a href={shop.link}>
+          <Link to={`/${shop.shopName}`}>
             <SliderItem bg={shop.bgColor}>
               <img src={shop.imageLink} alt={shop.alt} />
             </SliderItem>
-          </a>
+          </Link>
         </li>
       ))}
     </SliderWrapper>

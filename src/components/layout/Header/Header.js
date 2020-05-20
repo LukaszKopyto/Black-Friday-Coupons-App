@@ -17,7 +17,7 @@ const Header = () => {
       <Title>
         <span>Black</span> Friday 2020
       </Title>
-      <Title as='h2' h2>
+      <Title as='h2' title='medium'>
         Najnowsze promocje
       </Title>
     </HeaderWrapper>

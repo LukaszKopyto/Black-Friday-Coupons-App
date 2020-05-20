@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { AuthProvider } from './Auth'
 import PrivateRoute from './PrivateRoute'
 import App from './App'
 import Login from './Login'
-import SignUp from './SignUp'
+import Shopsite from './components/views/Shopsite'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import GlobalFonts from './utils/fonts/fonts'
 import { theme } from './utils/theme'
@@ -29,9 +29,11 @@ ReactDOM.render(
           <Router>
             <GlobalStyle />
             <GlobalFonts />
-            <PrivateRoute exact path='/' component={App} />
-            <Route exact path='/login' component={Login} />
-            <Route exact path='/signup' component={SignUp} />
+            <Switch>
+              <PrivateRoute exact path='/' component={App} />
+              <Route path='/login' component={Login} />
+              <Route path='/:shopName' component={Shopsite} />
+            </Switch>
           </Router>
         </AuthProvider>
       </>

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const HamburgerWrapper = styled.button`
   width: 19px;
   height: 12px;
+  margin-right: 30px;
   border: 0;
   border-top: ${({ theme }) => `2px solid ${theme.colors.textColor}`};
   background: transparent;

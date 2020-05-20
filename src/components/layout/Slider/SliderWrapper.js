@@ -7,7 +7,7 @@ const SliderWrapper = styled.ul`
   flex: 0 0 auto;
   overflow-x: auto;
   margin: 50px 0 33px;
-  padding-left: 20px;
+  padding-left: 30px;
   list-style: none;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
@@ -20,7 +20,8 @@ const SliderWrapper = styled.ul`
   }
 
   @media ${({ theme }) => theme.device.xl} {
-    width: 70vw;
+    width: calc(8 * 110px);
+    padding-left: 0;
   }
 `
 export default SliderWrapper
