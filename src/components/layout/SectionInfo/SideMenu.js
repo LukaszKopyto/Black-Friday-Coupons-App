@@ -1,8 +1,23 @@
 import React from 'react'
 import { bool } from 'prop-types'
 import { SideMenuWrapper } from './SideMenuWrapper'
+import { Anchor } from './Anchor'
 
-const SideMenu = ({ open }) => {
+const SideMenu = ({ open, countries, article }) => {
+  if (!article && countries) {
+    return (
+      <SideMenuWrapper open={open}>
+        <ul>
+          {countries.map((country, id) => (
+            <Anchor key={id} href={country.link}>
+              <li>Black Friday: {country.name}</li>
+            </Anchor>
+          ))}
+        </ul>
+      </SideMenuWrapper>
+    )
+  }
+
   return (
     <SideMenuWrapper open={open}>
       <ul>

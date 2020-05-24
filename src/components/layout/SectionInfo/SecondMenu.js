@@ -26,10 +26,11 @@ export const SecondMenu = styled.ul`
     text-align: center;
     position: relative;
     top: 0px;
+    cursor: pointer;
   }
   & .active {
     color: ${({ theme }) => theme.colors.textColor};
-    border-bottom: ${({ theme }) => `1px solid ${theme.colors.textColor}`};
+    border-bottom: ${({ theme }) => `2px solid ${theme.colors.textColor}`};
   }
 
   @media ${({ theme }) => theme.device.md} {
@@ -37,6 +38,7 @@ export const SecondMenu = styled.ul`
       width: 50%;
       text-align: center;
       font-size: 18px;
+      cursor: pointer;
     }
   }
 
@@ -48,7 +50,6 @@ export const SecondMenu = styled.ul`
   & li {
     line-height: 89px;
     margin: 0;
-  }
-  & .active {
+    cursor: pointer;
   }
 `
