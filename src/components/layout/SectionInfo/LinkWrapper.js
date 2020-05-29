@@ -4,10 +4,13 @@ export const LinkWrapper = styled.div`
   display: flex;
   flex: 1;
   justify-content: flex-end;
-  font-size: 18px;
-  font-weight: 600;
-  & a {
+  & button {
+    font-size: 18px;
+    font-weight: 600;
     color: #a9a3b0;
     text-decoration: none;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
   }
 `

@@ -25,7 +25,7 @@ import UnitedStates from '../../../images/UnitedState.jpg'
 
 const SectionInfo = () => {
   const [open, setOpen] = useState(false)
-  const [article, setArticle] = useState(false)
+  const [article, setArticle] = useState(true)
 
   const countries = [
     {

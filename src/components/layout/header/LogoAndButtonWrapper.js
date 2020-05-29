@@ -5,6 +5,10 @@ export const LogoAndButtonWrapper = styled.div`
   flex-direction: ${({ small }) => (small ? 'row' : 'column')};
   align-items: center;
   width: ${({ small }) => (small ? 'unset' : '100vw')};
+  z-index: 2;
+  & a {
+    display: block;
+  }
 
   @media ${({ theme }) => theme.device.md} {
     flex-direction: row;

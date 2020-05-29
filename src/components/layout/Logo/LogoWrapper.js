@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const LogoWrapper = styled.picture`
+export const LogoWrapper = styled.div`
   & img {
     margin: ${({ small }) => (small ? '0 20px' : '50px auto 23px')};
     width: ${({ small }) => (small ? '140px' : '213px')};

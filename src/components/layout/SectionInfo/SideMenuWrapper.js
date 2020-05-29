@@ -16,6 +16,16 @@ export const SideMenuWrapper = styled.nav`
   & li {
     margin-bottom: 20px;
   }
+  & a {
+    text-decoration: none;
+    color: ${({ theme }) => theme.colors.textColor};
+    &.active {
+      font-weight: 600;
+    }
+    &:hover {
+      font-weight: 600;
+    }
+  }
 
   @media ${({ theme }) => theme.device.xl} {
     position: relative;
