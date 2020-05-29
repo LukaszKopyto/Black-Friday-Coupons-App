@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const FirstMenu = styled.div`
   height: 90px;
   display: flex;
-  justify-content: space-between;
+  justify-content: ${({ toLeft }) => (toLeft ? 'unset' : 'space-between')};
   align-items: center;
   padding: 0 30px;
   border-top: ${({ theme }) => `1px solid ${theme.colors.border}`};
@@ -12,11 +12,12 @@ export const FirstMenu = styled.div`
 
   @media ${({ theme }) => theme.device.md} {
     justify-content: flex-start;
-    font-size: 25px;
+    font-size: 24px;
+    width: 100%;
   }
 
   @media ${({ theme }) => theme.device.xl} {
-    width: 50%;
+    width: ${({ toLeft }) => (toLeft ? '100%' : '50%')};
     padding: 0 50px;
   }
 `

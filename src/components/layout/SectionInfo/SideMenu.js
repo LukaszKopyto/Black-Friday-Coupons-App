@@ -1,25 +1,65 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import { bool } from 'prop-types'
+import { promotedStores } from '../../../utils/promotedStores'
 import { SideMenuWrapper } from './SideMenuWrapper'
 
-const SideMenu = ({ open }) => {
+const SideMenu = ({ open, countries, article }) => {
+  if (!article && countries) {
+    return (
+      <SideMenuWrapper open={open}>
+        <ul>
+          {countries.map((country, id) => (
+            <a key={id} href={country.link}>
+              <li>Black Friday: {country.name}</li>
+            </a>
+          ))}
+        </ul>
+      </SideMenuWrapper>
+    )
+  }
+
   return (
     <SideMenuWrapper open={open}>
       <ul>
-        <li>Black Friday: facts and numbers</li>
-        <li>Black Friday: trends in the past years</li>
-        <li>Black Friday spending</li>
-        <li>Methodology and data source</li>
-        <li>Public Use</li>
-        <li>Black Friday 2018 Around the World</li>
-        <li>Global Recognition</li>
-        <li>Black Friday: facts and numbers</li>
-        <li>Black Friday: trends in the past years</li>
-        <li>Black Friday spending</li>
-        <li>Global Recognition</li>
-        <li>Black Friday: facts and numbers</li>
-        <li>Black Friday: trends in the past years</li>
-        <li>Black Friday spending</li>
+        <li>
+          <NavLink activeClassName='active' to='/article/facts-and-numbers'>
+            Black Friday: facts and numbers
+          </NavLink>
+        </li>
+        <li>
+          <NavLink activeClassName='active' to='/article/trends-past-years'>
+            Trends in the past years
+          </NavLink>
+        </li>
+        <li>
+          <NavLink activeClassName='active' to='/article/spending'>
+            Black Friday spending
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            activeClassName='active'
+            to='/article/pieces-of-black-friday-cake'
+          >
+            Pieces of Black Friday Cake
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            activeClassName='active'
+            to='/article/frequntly-asked-questions'
+          >
+            Frequently Asked Questions
+          </NavLink>
+        </li>
+        {promotedStores.map((shop) => (
+          <li key={shop.id}>
+            <NavLink activeClassName='active' to={`/${shop.shopName}`}>
+              Black Friday w {shop.shopName}
+            </NavLink>
+          </li>
+        ))}
       </ul>
     </SideMenuWrapper>
   )

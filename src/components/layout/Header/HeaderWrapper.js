@@ -7,9 +7,14 @@ const HeaderWrapper = styled.header`
     `url(${bgImage}) ${theme.colors.headerColor} top center no-repeat`};
   background-size: cover;
   display: flex;
-  flex-direction: column;
+  flex-direction: ${({ small }) => (small ? 'row' : 'column')};
   align-items: center;
-  height: 880px;
+  justify-content: ${({ small }) => (small ? 'space-between' : 'unset')};
+  height: ${({ small }) => (small ? '71px' : '880px')};
+
+  @media ${({ theme }) => theme.device.xl} {
+    height: ${({ small }) => small && '150px'};
+  }
 `
 
 export default HeaderWrapper

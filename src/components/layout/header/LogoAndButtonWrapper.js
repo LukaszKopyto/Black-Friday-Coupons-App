@@ -2,15 +2,18 @@ import styled from 'styled-components'
 
 export const LogoAndButtonWrapper = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: ${({ small }) => (small ? 'row' : 'column')};
   align-items: center;
-  width: 100vw;
+  width: ${({ small }) => (small ? 'unset' : '100vw')};
+  z-index: 2;
+  & a {
+    display: block;
+  }
 
   @media ${({ theme }) => theme.device.md} {
     flex-direction: row;
-    width: 100vw;
     justify-content: space-between;
-    padding: 0 63px;
+    padding: ${({ small }) => (small ? 'unset' : '0 63px')};
   }
 
   @media ${({ theme }) => theme.device.xl} {

@@ -9,7 +9,6 @@ import SectionInfo from '../SectionInfo'
 import { CouponContainer } from '../Coupon/CouponContainer'
 
 const Main = () => {
-  const [width, setWidth] = useState(window.innerWidth)
   const [shops, setShops] = useState([])
   const [voucherToShow, setVoucherToShow] = useState(2)
   const [showMoreButton, setShowMoreButton] = useState(true)
@@ -18,15 +17,12 @@ const Main = () => {
     getVouchers()
       .then((allVouchers) => setShops(allVouchers))
       .catch((err) => console.log(err))
-    const handleWindowResize = () => setWidth(window.innerWidth)
-    window.addEventListener('resize', handleWindowResize)
 
-    checkWindowWidth(width, setVoucherToShow)
-
-    return () => window.removeEventListener('resize', handleWindowResize)
+    checkWindowWidth()
   }, [])
 
-  function checkWindowWidth(width, setVoucherToShow) {
+  function checkWindowWidth() {
+    const width = window.innerWidth
     if (width > 375 && width < 959) {
       setVoucherToShow(4)
     }
@@ -50,7 +46,6 @@ const Main = () => {
   }
 
   const CouponList = []
-  const DynamicCouponList = []
   if (shops) {
     for (const shop of shops) {
       for (const voucher of shop) {

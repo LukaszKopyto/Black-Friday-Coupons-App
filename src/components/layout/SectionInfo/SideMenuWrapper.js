@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const SideMenuWrapper = styled.nav`
   display: flex;
   width: 340px;
-  height: 100%;
+  min-height: 100%;
   background: ${({ theme }) => theme.colors.sideMenuBg};
   position: absolute;
   transform: ${({ open }) => (open ? 'translateX(0%)' : 'translateX(-100%)')};
@@ -16,9 +16,20 @@ export const SideMenuWrapper = styled.nav`
   & li {
     margin-bottom: 20px;
   }
+  & a {
+    text-decoration: none;
+    color: ${({ theme }) => theme.colors.textColor};
+    &.active {
+      font-weight: 600;
+    }
+    &:hover {
+      font-weight: 600;
+    }
+  }
 
   @media ${({ theme }) => theme.device.xl} {
     position: relative;
     transform: translateX(0%);
+    min-width: 340px;
   }
 `
