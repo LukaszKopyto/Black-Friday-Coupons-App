@@ -12,18 +12,16 @@ const getToken = () => {
   const form = new FormData()
   form.append('_username', process.env.REACT_APP_USERNAME)
   form.append('_password', process.env.REACT_APP_PASSWORD)
-  return new Promise((resolve, reject) => {
+  return (
     axiosInstance
       .post('/login_check', form)
-      .then(async (response) => {
-        resolve(response.data.token)
-        // let token = response.data.token
-        // let tokenLastRefresh = new Date().getTime()
-      })
+      .then((response) => response.data.token)
+      // let token = response.data.token
+      // let tokenLastRefresh = new Date().getTime()
       .catch((error) => {
-        reject(error)
+        console.log(error)
       })
-  })
+  )
 }
 
 export const getVouchers = async () => {

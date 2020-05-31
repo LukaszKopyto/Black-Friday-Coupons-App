@@ -16,7 +16,7 @@ const SliderWrapper = styled.ul`
   }
 
   @media ${({ theme }) => theme.device.md} {
-    margin-top: 44px;
+    margin-top: 120px;
   }
 
   @media ${({ theme }) => theme.device.xl} {
