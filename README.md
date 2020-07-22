@@ -1,6 +1,50 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Black Friday Coupon Apps 💸
 
-## Available Scripts
+[![Netlify Status](https://api.netlify.com/api/v1/badges/cadd87ae-0e34-4218-be61-dc191a8108f1/deploy-status)](https://app.netlify.com/sites/oddam-w-dobre-rece/deploys)
+
+## General info
+
+> If you want to save money while shopping, this coupon app is a great way to save money efficiently and effectively. 💰 😀
+
+Responsive React application for finding discount codes and promotions for online shopping on Black Friday.
+
+- based on a design in Zeplin
+- bootstrapped with Create React App.
+
+## Live demo
+
+[black-friday-discounts.netlify.app](https://black-friday-discounts.netlify.app/)
+
+## Technologies
+
+- React, based on:
+  - Hooks,
+  - Context API
+- React-router
+- Axios (HTTP Request)
+- Styled-components
+- Moment.js
+- Netlify
+
+## Features
+
+- Responsive Web Design
+- The number of coupons displayed on the home page depends on the width of the screen.
+- "Show more" button to load more vouchers.
+- Carousel slider with links to individual subpages (stores)
+- Skeleton screen for vouchers (a placeholder to display an animation before the API data is retrieved)
+- Changing the menu item depends on the active tab
+- Displaying coupons based on data taken from the API
+- Displaying coupon details on a popup, after clicking the coupon button (popup only for desktop and tablet view)
+- Copying the coupon code to the clipboard
+- Retrieving the coupon finish date (UTC time date format) from the API and displaying it in a human-readable time frame (using Moment js)
+- Fetch data using axios:
+  - Receive an access token to authorize next request
+  - Retrieving coupon data from one endpoint based on an ID retrieved from another endpoint
+  - Transform response (filtering and mapping large list of ID's) before Axios return response
+  - Making simultaneous requests
+
+## Setup
 
 In the project directory, you can run:
 
@@ -12,57 +56,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 ### `npm run build`
 
 Builds the app for production to the `build` folder.<br />
 It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
