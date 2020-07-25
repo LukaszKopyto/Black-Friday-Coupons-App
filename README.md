@@ -1,6 +1,6 @@
 # Black Friday Coupon Apps 💸
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/cadd87ae-0e34-4218-be61-dc191a8108f1/deploy-status)](https://app.netlify.com/sites/oddam-w-dobre-rece/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/25b2d394-4859-41ef-8bf4-b4ce896c7be0/deploy-status)](https://app.netlify.com/sites/black-friday-discounts/deploys)
 
 ## General info
 
