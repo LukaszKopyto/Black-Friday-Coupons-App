@@ -1,20 +1,12 @@
-<<<<<<< HEAD
 # Black Friday Coupon Apps 💸
-=======
-# Black Friday Landing Page
->>>>>>> c560376db9c3cc289c53d9bd8264cc253957df7e
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/cadd87ae-0e34-4218-be61-dc191a8108f1/deploy-status)](https://app.netlify.com/sites/oddam-w-dobre-rece/deploys)
 
 ## General info
 
-<<<<<<< HEAD
 > If you want to save money while shopping, this coupon app is a great way to save money efficiently and effectively. 💰 😀
 
 Responsive React application for finding discount codes and promotions for online shopping on Black Friday.
-=======
-> Responsive React application for finding discount codes and promotions for online shopping on Black Friday.
->>>>>>> c560376db9c3cc289c53d9bd8264cc253957df7e
 
 - based on a design in Zeplin
 - bootstrapped with Create React App.
@@ -22,7 +14,6 @@ Responsive React application for finding discount codes and promotions for onlin
 ## Live demo
 
 [black-friday-discounts.netlify.app](https://black-friday-discounts.netlify.app/)
-<<<<<<< HEAD
 
 ## Technologies
 
@@ -69,5 +60,3 @@ You will also see any lint errors in the console.
 
 Builds the app for production to the `build` folder.<br />
 It correctly bundles React in production mode and optimizes the build for the best performance.
-=======
->>>>>>> c560376db9c3cc289c53d9bd8264cc253957df7e
