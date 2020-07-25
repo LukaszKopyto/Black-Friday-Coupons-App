@@ -11,6 +11,9 @@ Responsive React application for finding discount codes and promotions for onlin
 - based on a design in Zeplin
 - bootstrapped with Create React App.
 
+![Responsive](./src/images/BF_screen2.jpg)
+![apps screens](./src/images/BF_screen.jpg)
+
 ## Live demo
 
 [black-friday-discounts.netlify.app](https://black-friday-discounts.netlify.app/)
