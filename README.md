@@ -18,6 +18,10 @@ Responsive React application for finding discount codes and promotions for onlin
 
 [black-friday-discounts.netlify.app](https://black-friday-discounts.netlify.app/)
 
+Login: lukasz.kopyto@gmail.com
+
+Password: test123
+
 ## Technologies
 
 - React, based on:
